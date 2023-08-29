@@ -56,14 +56,16 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/EnemyInit.cs" />
+    <Compile Include="Assets/Scripts/LifeUi.cs" />
+    <Compile Include="Assets/Scripts/Shooting.cs" />
     <Compile Include="Assets/Scripts/Movment.cs" />
     <Compile Include="Assets/Scripts/Aim.cs" />
-    <Compile Include="Assets/Scripts/Shooting.cs" />
+    <Compile Include="Assets/Scripts/EnemyAi.cs" />
     <Compile Include="Assets/Scripts/BulletFire.cs" />
-    <Compile Include="Assets/Scripts/EnemyInit.cs" />
-    <Compile Include="Assets/Scripts/EnemyUi.cs" />
-    <Compile Include="Assets/Scripts/hen.cs" />
-    <Compile Include="Assets/Scripts/LifeUi.cs" />
+    <Compile Include="Assets/Scripts/SceneLoader.cs" />
+    <Compile Include="Assets/Scripts/DeathHandler.cs" />
+    <Compile Include="Assets/Scripts/ScoreBoard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

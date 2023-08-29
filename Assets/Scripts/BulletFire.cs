@@ -1,25 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class BulletFire : MonoBehaviour
 {
     public float life = 3;
-    // Start is called before the first frame update
+    ScoreBoard score;
+   
     private void Awake()
     {
         Destroy(gameObject, life);
+        score = GameObject.Find("Score Board").GetComponent<ScoreBoard>();
     }
+
+    public void Update()
+    {
+        StartCoroutine(RangeDistroy());
+        if (life <= 0)
+            Destroy(gameObject);
+    }
+
+    IEnumerator RangeDistroy()
+    {
+        yield return new WaitForSeconds(0.8f);
+        life--;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("PlayerTank"))
         {
-            restart();
+            collision.gameObject.GetComponent<DeathHandler>().handleDeth();
         }
 
-        if (!collision.gameObject.CompareTag("indestructible"))
+        if (collision.gameObject.CompareTag("EnemyTank"))
         {
             
             Transform topParent = collision.transform;
@@ -27,16 +42,14 @@ public class BulletFire : MonoBehaviour
             {
                 topParent = topParent.parent;
             }
+            score.IncScore();
 
-            // Destroy the top-most parent, which will destroy all children
+
             Destroy(topParent.gameObject);
 
 
         }
         Destroy(gameObject);
     }
-    private void restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+   
 }
