@@ -43,13 +43,7 @@ public class EnemyInit : MonoBehaviour
                 }
                 i++;
             }
-           
-            
-
         }
-    
-
-
     }
 
 
