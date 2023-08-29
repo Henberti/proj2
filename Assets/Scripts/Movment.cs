@@ -7,7 +7,7 @@ public class Movment : MonoBehaviour
     [SerializeField] float movemet_speed = 5f;
     [SerializeField] float rotation_speed = 180f;
 
-    // Update is called once per frame
+
     void Update()
     {
         float xValue = Input.GetAxis("Horizontal");
