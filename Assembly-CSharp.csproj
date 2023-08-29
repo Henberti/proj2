@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/EnemyInit.cs" />
-    <Compile Include="Assets/Scripts/LifeUi.cs" />
     <Compile Include="Assets/Scripts/Shooting.cs" />
     <Compile Include="Assets/Scripts/Movment.cs" />
     <Compile Include="Assets/Scripts/Aim.cs" />
