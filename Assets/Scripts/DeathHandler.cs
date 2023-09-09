@@ -15,7 +15,7 @@ public class DeathHandler : MonoBehaviour
         
     }
 
-    public void handleDeth()
+    public void HandleDeath()
     {
         gameOverCanvas.enabled = true;
         TMP_Text finalScore = GameObject.Find("Game Over Text").GetComponent<TMP_Text>();

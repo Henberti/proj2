@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BulletFire : MonoBehaviour
 {
-    public float life = 3;
+    private float life = 3;
+    [SerializeField] float timeLive = 0.8f;
     ScoreBoard score;
    
     private void Awake()
     {
         Destroy(gameObject, life);
         score = GameObject.Find("Score Board").GetComponent<ScoreBoard>();
+
     }
 
     public void Update()
@@ -22,7 +24,8 @@ public class BulletFire : MonoBehaviour
 
     IEnumerator RangeDistroy()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(timeLive);
+      
         life--;
     }
 
@@ -31,7 +34,7 @@ public class BulletFire : MonoBehaviour
     {
         if (collision.transform.CompareTag("PlayerTank"))
         {
-            collision.gameObject.GetComponent<DeathHandler>().handleDeth();
+            collision.gameObject.GetComponent<DeathHandler>().HandleDeath();
         }
 
         if (collision.gameObject.CompareTag("EnemyTank"))
